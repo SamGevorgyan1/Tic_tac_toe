@@ -4,73 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
-    android:background="@color/background_color">
-
+    android:background="@color/background_color"
+    tools:context=".HomeActivity">
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/button_play"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="25dp"
-        android:text="Tic tac toe"
-        android:textSize="40sp"
         android:gravity="center"
-
+        android:text="Tic tac toe"
         android:textColor="@color/white"
+        android:textSize="40sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/button_play"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
 
         />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_help"
         android:layout_width="250dp"
-        android:textColor="@color/button_text_color"
-        android:text="Help"
-        android:textSize="18sp"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_color_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="Help"
+        android:textColor="@color/button_text_color"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
 
-/>
+        />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_play"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/shape_color_button"
         android:text="Play"
         android:textColor="@color/button_text_color"
         android:textSize="18sp"
-        android:background="@drawable/shape_color_button"
         app:layout_constraintBottom_toTopOf="@+id/button_help"
         app:layout_constraintEnd_toEndOf="@+id/button_help"
         app:layout_constraintStart_toStartOf="@+id/button_help"
         app:layout_constraintTop_toTopOf="parent"
 
         app:layout_constraintVertical_bias="0.9" />
-<androidx.appcompat.widget.AppCompatButton
-    android:id="@+id/button_quit"
-    android:layout_width="250dp"
-    android:layout_height="wrap_content"
-    android:text="close"
-    android:textColor="@color/button_text_color"
-    android:textSize="18sp"
-    android:background="@drawable/shape_color_button"
-    app:layout_constraintTop_toBottomOf="@+id/button_help"
-    app:layout_constraintStart_toStartOf="@+id/button_help"
-    app:layout_constraintEnd_toEndOf="@id/button_help"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintVertical_bias="0.1000000"
-    />
 
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_quit"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_color_button"
+        android:text="close"
+        android:textColor="@color/button_text_color"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/button_help"
+        app:layout_constraintStart_toStartOf="@+id/button_help"
+        app:layout_constraintTop_toBottomOf="@+id/button_help"
+        app:layout_constraintVertical_bias="0.1000000" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

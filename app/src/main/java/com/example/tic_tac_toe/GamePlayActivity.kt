@@ -1,14 +1,11 @@
 package com.example.tic_tac_toe
 
-
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
-
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
+import com.example.tic_tac_toe.customviews.TicTacToeView
 
 class GamePlayActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var buttonPlace1: AppCompatButton
@@ -23,16 +20,16 @@ class GamePlayActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var player1name: TextView
     lateinit var player2name: TextView
 
+    private var ticTacToeView:TicTacToeView?= null
+
     private var queue: Boolean = true
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val getPlayer1name: String?
-        val getPlayer2name: String?
-
-        getPlayer1name = intent.getStringExtra("player1name").toString()
-        getPlayer2name = intent.getStringExtra("player2name").toString()
+        ticTacToeView = findViewById(R.id.ticTacToeView)
+        val getPlayer1name = intent.getStringExtra("player1name").toString()
+        val getPlayer2name = intent.getStringExtra("player1name").toString()
 
         setContentView(R.layout.activity_game_play)
         player1name = findViewById(R.id.player1name)
@@ -51,7 +48,6 @@ class GamePlayActivity : AppCompatActivity(), View.OnClickListener {
         buttonPlace8 = findViewById(R.id.buttonPlace8)
         buttonPlace9 = findViewById(R.id.buttonPlace9)
 
-
         buttonPlace1.setOnClickListener(this)
         buttonPlace2.setOnClickListener(this)
         buttonPlace3.setOnClickListener(this)
@@ -64,106 +60,14 @@ class GamePlayActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-/**
-    private fun win() {
-
-
-        if (buttonPlace1.equals(R.drawable.ic_x) && buttonPlace2.equals(R.drawable.ic_x) && buttonPlace3.equals(
-                R.drawable.ic_x
-            )
-        ) {
-            Toast.makeText(this, "win x", Toast.LENGTH_SHORT).show()
-        }
-    }
-**/
 
     override fun onClick(v: View?) {
-        when (v) {
-            buttonPlace1 -> {
-
-                if (queue) {
-                    buttonPlace1.setBackgroundResource(R.drawable.ic_x)
-                    queue = false
-                } else {
-                    buttonPlace1.setBackgroundResource(R.drawable.ic_o)
-                    queue = true
-                }
-            }
-            buttonPlace2 -> {
-
-                if (queue) {
-                    buttonPlace2.setBackgroundResource(R.drawable.ic_x)
-                    queue = false
-                } else {
-                    buttonPlace2.setBackgroundResource(R.drawable.ic_o)
-                    queue = true
-                }
-            }
-            buttonPlace3 -> {
-
-                if (queue) {
-                    buttonPlace3.setBackgroundResource(R.drawable.ic_x)
-                    queue = false
-                } else {
-                    buttonPlace3.setBackgroundResource(R.drawable.ic_o)
-                    queue = true
-                }
-            }
-            buttonPlace4 -> {
-                if (queue) {
-                    buttonPlace4.setBackgroundResource(R.drawable.ic_x)
-                    queue = false
-                } else {
-                    buttonPlace4.setBackgroundResource(R.drawable.ic_o)
-                    queue = true
-                }
-            }
-            buttonPlace5 -> {
-                if (queue) {
-                    buttonPlace5.setBackgroundResource(R.drawable.ic_x)
-                    queue = false
-                } else {
-                    buttonPlace5.setBackgroundResource(R.drawable.ic_o)
-                    queue = true
-                }
-            }
-            buttonPlace6 -> {
-                if (queue) {
-                    buttonPlace6.setBackgroundResource(R.drawable.ic_x)
-                    queue = false
-                } else {
-                    buttonPlace6.setBackgroundResource(R.drawable.ic_o)
-                    queue = true
-                }
-            }
-            buttonPlace7 -> {
-                if (queue) {
-                    buttonPlace7.setBackgroundResource(R.drawable.ic_x)
-                    queue = false
-                } else {
-                    buttonPlace7.setBackgroundResource(R.drawable.ic_o)
-                    queue = true
-                }
-            }
-            buttonPlace8 -> {
-                if (queue) {
-                    buttonPlace8.setBackgroundResource(R.drawable.ic_x)
-                    queue = false
-                } else {
-                    buttonPlace8.setBackgroundResource(R.drawable.ic_o)
-                    queue = true
-                }
-
-            }
-            buttonPlace9 -> {
-                if (queue) {
-                    buttonPlace9.setBackgroundResource(R.drawable.ic_x)
-                    queue = false
-                } else {
-                    buttonPlace9.setBackgroundResource(R.drawable.ic_o)
-                    queue = true
-                }
-            }
+        if (queue) {
+            v?.setBackgroundResource(R.drawable.ic_x)
+            queue = false
+        } else {
+            v?.setBackgroundResource(R.drawable.ic_o)
+            queue = true
         }
     }
 }

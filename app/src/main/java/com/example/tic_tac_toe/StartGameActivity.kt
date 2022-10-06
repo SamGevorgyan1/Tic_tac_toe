@@ -23,8 +23,6 @@ class StartGameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.start_game_activity)
 
-
-
         buttonPlay = findViewById(R.id.buttonPlay)
 
         player1_name=findViewById(R.id.player1)
